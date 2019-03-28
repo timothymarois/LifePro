@@ -16,7 +16,7 @@
          </v-card> -->
        <!-- </v-flex> -->
 
-       <Moods />  
+       <Moods />   
 
      </v-layout>
 
@@ -230,7 +230,9 @@
             action: 'local_bar',
             title: 'Beverages',
             items: [
-              { title: 'List Item' }
+              { title: 'Red Bull' },
+              { title: 'Coffee' },
+              { title: 'Soda' }
             ]
           },
           {
@@ -238,29 +240,36 @@
             title: 'Meals',
             items: [
               { title: 'Fast Food' },
+              { title: 'Restaurant' },
+              { title: 'Homemade (Fresh)' },
               { title: 'Homemade (Processed)' },
-              { title: 'Homemade (Fresh)' }
             ]
           },
           {
             action: 'local_hospital',
             title: 'Pharmaceuticals',
             items: [
-              { title: 'List Item' }
+              { title: 'Isotrtinoin' },
+              { title: 'Ibuprofen' },
+              { title: 'Asprin (NSAID)' },
+              { title: 'Adderall' },
+              { title: 'Vyvanse' },
+              { title: 'MDMA' }
             ]
           },
           {
             action: 'fitness_center',
             title: 'Fitness',
             items: [
-              { title: 'List Item' }
+              { title: 'Steps' }
             ]
           },
           {
             action: 'local_laundry_service',
             title: 'Hygiene',
             items: [
-              { title: 'List Item' }
+              { title: 'Shower' },
+              { title: 'Brush Teeth' }
             ]
           },
           {

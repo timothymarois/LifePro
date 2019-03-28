@@ -6,7 +6,6 @@
 
 <style lang="scss" scoped>
     @import '//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons';
-    // @import '../../css/base.css';
 
     .md-primary {
         background-color: #2196f3!important;

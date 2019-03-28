@@ -3,7 +3,7 @@
 	<v-flex xs12 md4>
 		<v-item-group class="pb-2" v-model="mood">
 
-			<div style="font-size: 16px;color: #85abca;">How are you feeling today?</div>
+			<div class="pb-1" style="font-size: 16px;color: #85abca;">How are you feeling today?</div>
 
 			<v-layout wrap>
 
