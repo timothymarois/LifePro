@@ -111,9 +111,10 @@
 
 
 
-
 .theme--dark.v-list.actions>div {
     border-bottom: 1px solid #243848;
+
+    
 }
 
 .theme--dark.v-list.effects>div {
@@ -128,6 +129,7 @@
     background: #291c1c;
     background: #19222b;
     border: 1px solid #b33636;
+    border: 1px solid #692020;
 }
 
 /* .theme--dark .v-list__group__header.v-list__group__header {
@@ -177,6 +179,7 @@
 
 .theme--dark.v-list {
     border: 1px solid #4989e9;
+    border: 1px solid #2a518a;
 }
 
 .theme--dark.v-list.actions>div {
@@ -317,6 +320,11 @@
 
 .v-list__group__items>div {
     border-bottom: 1px solid #3e5363;
+}
+
+.v-list__group__items>div:last-child
+{
+    border-bottom: 0;
 }
 
 /* .theme--dark.v-sheet.moodselect.active, .theme--dark.v-sheet.moodselect:hover {
