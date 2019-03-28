@@ -4,12 +4,13 @@
 		<v-item-group class="pb-2" v-model="mood">
 
 			<div style="font-size: 16px;color: #85abca;">How are you feeling today?</div>
+
 			<v-layout wrap>
 
 				<v-flex md3>
 					<v-item>
 						<v-card
-							@click.stop="mood = '100'"
+							@click.stop="setMood('100')"
 							v-bind:class="{active : mood == '100'}"
 							class="d-flex align-center moodselect face_good "
 							dark
@@ -28,7 +29,7 @@
 				<v-flex md3>
 					<v-item>
 						<v-card
-							@click.stop="mood = '75'"
+							@click.stop="setMood('75')"
 							v-bind:class="{active : mood == '75'}"
 							class="d-flex align-center moodselect face_okay"
 							dark
@@ -47,7 +48,7 @@
 				<v-flex md3>
 					<v-item>
 						<v-card
-							@click.stop="mood = '50'"
+							@click.stop="setMood('50')"
 							v-bind:class="{active : mood == '50'}"
 							class="d-flex align-center moodselect face_bad"
 							dark
@@ -66,7 +67,7 @@
 				<v-flex md3>
 					<v-item>
 						<v-card
-							@click.stop="mood = '25'"
+							@click.stop="setMood('25')"
 							v-bind:class="{active : mood == '25'}"
 							class="d-flex align-center moodselect face_verybad "
 							dark
@@ -101,8 +102,15 @@ export default {
 	created() {
 		
 	},
-	props: { 
-		
+	methods: {
+		setMood(mood) {
+			if (mood==this.mood) {
+				this.mood = 0;
+			}
+			else {
+				this.mood = mood;
+			}
+		}
 	}
 }
   
