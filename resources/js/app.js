@@ -7,26 +7,17 @@
 
 require('./bootstrap');
 
-// window.Vue = require('vue');
-
 import Vue from 'vue';
 import Vuex from 'vuex';
 import VueRouter from 'vue-router';
 import routes from './routes';
-
-
-// import { library } from '@fortawesome/fontawesome-svg-core';
-// import { faUserSecret } from '@fortawesome/free-solid-svg-icons';
-// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-
-// library.add(faUserSecret);
-// Vue.component('font-awesome-icon', FontAwesomeIcon);
+import store from './store';
 
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
 import '../css/base.css';
 
-Vue.use(Vuex);
+// Vue.use(Vuex);
 Vue.use(Vuetify);
 Vue.use(VueRouter);
 
@@ -57,5 +48,6 @@ const router = new VueRouter({
 
 const app = new Vue({
     el: '#app',
+    store,
     router
 });

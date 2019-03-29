@@ -1,11 +1,26 @@
+
+.accent--text {
+    color: #0081ff !important;
+    caret-color: #0060ff !important;
+}
+
 .theme--dark.application {
     background: #19232b;
 }
 
-/* .theme--dark.v-sheet {
+.v-dialog .theme--dark.v-sheet {
+    background-color: #19222b;
+    border-color: #19222b;
+    color: #fff;
+}
 
-} */
+.v-dialog .theme--dark.v-subheader {
+    background: #0a5098;
+}
 
+.v-dialog .theme--dark.v-list {
+    border:0;
+}
 
 .v-toolbar .title-logo {
     font-size: 24px;

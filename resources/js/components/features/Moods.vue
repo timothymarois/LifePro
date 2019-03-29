@@ -3,15 +3,15 @@
 	<v-flex xs12 md4>
 		<v-item-group class="pb-2" v-model="mood">
 
-			<div class="pb-1" style="font-size: 16px;color: #85abca;">How are you feeling today?</div>
+			<div class="pb-1" style="font-size: 16px;color: #85abca;">How are you feeling today? {{ mood }}</div>
 
 			<v-layout wrap>
 
 				<v-flex md3>
 					<v-item>
 						<v-card
-							@click.stop="setMood('100')"
-							v-bind:class="{active : mood == '100'}"
+							@click.stop="setMood(100)"
+							v-bind:class="{active : mood == 100}"
 							class="d-flex align-center moodselect face_good "
 							dark
 							height="60">
@@ -29,8 +29,8 @@
 				<v-flex md3>
 					<v-item>
 						<v-card
-							@click.stop="setMood('75')"
-							v-bind:class="{active : mood == '75'}"
+							@click.stop="setMood(75)"
+							v-bind:class="{active : mood == 75}"
 							class="d-flex align-center moodselect face_okay"
 							dark
 							height="60">
@@ -48,8 +48,8 @@
 				<v-flex md3>
 					<v-item>
 						<v-card
-							@click.stop="setMood('50')"
-							v-bind:class="{active : mood == '50'}"
+							@click.stop="setMood(50)"
+							v-bind:class="{active : mood == 50}"
 							class="d-flex align-center moodselect face_bad"
 							dark
 							height="60">
@@ -67,8 +67,8 @@
 				<v-flex md3>
 					<v-item>
 						<v-card
-							@click.stop="setMood('25')"
-							v-bind:class="{active : mood == '25'}"
+							@click.stop="setMood(25)"
+							v-bind:class="{active : mood == 25}"
 							class="d-flex align-center moodselect face_verybad "
 							dark
 							height="60">
@@ -92,25 +92,30 @@
 
 <script> 
 
+import { mapState, mapGetters, mapActions } from 'vuex'
+
 export default {
 	data: () => ({
-		mood : 0
+
 	}),
 	components: {
 		
 	},
+	computed: {
+		...mapState({
+			mood: state => state.Moods.mood
+		})
+	},
 	created() {
-		
+		this.$store.dispatch('Moods/getSavedMood');
 	},
 	methods: {
-		setMood(mood) {
-			if (mood==this.mood) {
-				this.mood = 0;
-			}
-			else {
-				this.mood = mood;
-			}
-		}
+		...mapActions({
+			setMood: 'Moods/setMood'
+		}),
+		...mapGetters({
+			getMood: 'Moods/getMood'
+		})
 	}
 }
   

@@ -333,12 +333,16 @@
            };
        },
 
-       mounted: function () {
+		mounted() {
 
-       },
+		},
 
-       destroyed: function () {
+		destroyed() {
 
-       }
-   }
+		},
+
+		created() {
+			
+		}
+    }
 </script>
