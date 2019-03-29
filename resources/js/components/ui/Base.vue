@@ -67,7 +67,8 @@
 
     <v-content>
       <v-container fluid pa-2>
-        <router-view></router-view>
+        <router-view></router-view> 
+        <Settings />
       </v-container>
     </v-content>
     
@@ -101,6 +102,8 @@
 
     <Footer />
 
+    
+
   </v-app>
 </template>
 
@@ -109,11 +112,13 @@
 
   import Toolbar from "./Toolbar";
   import Footer from "./Footer";
+  import Settings from "../features/Settings";
 
   export default {
     components: {
         Footer,
-        Toolbar
+        Toolbar,
+        Settings
     },
     data: () => ({
       drawer : null,
