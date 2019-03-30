@@ -21,7 +21,7 @@ const actions = {
         }
     },
     getSavedMood ({ commit }) {
-        commit('setMoodStatus', 100);
+        commit('setMoodStatus', 0);
     },
 }
 
