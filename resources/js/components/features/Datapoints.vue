@@ -54,7 +54,7 @@
             <v-subheader inset class="actions">ACTIONS</v-subheader>
 
           <v-list-group
-            v-for="item in actions"
+            v-for="item in sorted(actions)"
             :key="item.title"
             v-model="item.active"
              :prepend-icon="item.action"
@@ -69,11 +69,11 @@
             </template>
 
 
-            <DatapointList
-                v-for="dp in item.items"
+            <Datapoint
+                v-for="dp in sorted(item.items)"
                 v-bind:key="dp.title"
                 v-bind:dp="dp"
-            ></DatapointList>
+            ></Datapoint>
 
             <!-- <v-list-tile
               v-for="subItem in item.items"
@@ -125,7 +125,7 @@
           
           
           <v-list-group
-            v-for="item in effects"
+            v-for="item in sorted(effects)"
             :key="item.title"
             v-model="item.active"
               :prepend-icon="item.action"
@@ -140,11 +140,11 @@
             </template>
 
 
-            <DatapointList
-                v-for="dp in item.items"
+            <Datapoint
+                v-for="dp in sorted(item.items)"
                 v-bind:key="dp.title"
                 v-bind:dp="dp"
-            ></DatapointList>
+            ></Datapoint>
 
             <!-- <v-list-tile
               v-for="subItem in item.items"
@@ -185,12 +185,12 @@
 <script>
 
 import { mapState, mapGetters, mapActions } from 'vuex'
-import DatapointList from "./DatapointList";
+import Datapoint from "./Datapoint";
 
 export default {
 
     components: {
-        DatapointList
+        Datapoint
     },
 
     data : function() {
@@ -225,7 +225,13 @@ export default {
 		}),
 		...mapGetters({
 		
-		})
+		}),
+
+		sorted: function(arr) {
+			return arr.slice().sort(function(a, b) {
+				return a.order - b.order;
+			});
+		}
 	}
 }
 </script>

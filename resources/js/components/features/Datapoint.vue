@@ -15,7 +15,7 @@
                         <v-icon>remove_circle</v-icon>
                     </v-btn>
 
-                    <v-text-field style="width: 46px;height:30px;margin: 0;padding: 0;" class="text-md-center" v-model.number="dp.val" :value="dp.val" />
+                    <v-text-field style="width:60px;height:30px;margin: 0;padding: 0;" class="text-md-center" v-model.number="dp.val" :value="dp.val" />
 
                     <v-btn flat @click="dp.val = dp.val+1">
                         <v-icon>add_circle</v-icon>
