@@ -228,9 +228,15 @@ export default {
 		}),
 
 		sorted: function(arr) {
-			return arr.slice().sort(function(a, b) {
-				return a.order - b.order;
-			});
+
+			if (Array.isArray(arr))
+			{
+				return arr.slice().sort(function(a, b) {
+					return a.order - b.order;
+				});
+			}
+
+			return arr;
 		}
 	}
 }
