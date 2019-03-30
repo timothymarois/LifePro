@@ -5,19 +5,19 @@
 
             <v-list-tile-content>
                 <v-list-tile-title>{{ dp.title }}</v-list-tile-title>
-                <v-list-tile-sub-title>This is a description for this datapoint</v-list-tile-sub-title>
+                <v-list-tile-sub-title>{{ dp.desc }}</v-list-tile-sub-title>
             </v-list-tile-content>
 
             <v-list-tile-action>
 
                 <v-btn-toggle>
-                    <v-btn flat>
+                    <v-btn flat @click="dp.val = dp.val-1">
                         <v-icon>remove_circle</v-icon>
                     </v-btn>
 
-                    <v-text-field style="width: 46px;height:30px;margin: 0;padding: 0;" class="text-md-center" value="0" />
+                    <v-text-field style="width: 46px;height:30px;margin: 0;padding: 0;" class="text-md-center" v-model.number="dp.val" :value="dp.val" />
 
-                    <v-btn flat>
+                    <v-btn flat @click="dp.val = dp.val+1">
                         <v-icon>add_circle</v-icon>
                     </v-btn>
                 </v-btn-toggle> 

@@ -54,7 +54,7 @@
             <v-subheader inset class="actions">ACTIONS</v-subheader>
 
           <v-list-group
-            v-for="item in items"
+            v-for="item in actions"
             :key="item.title"
             v-model="item.active"
              :prepend-icon="item.action"
@@ -184,6 +184,7 @@
 
 <script>
 
+import { mapState, mapGetters, mapActions } from 'vuex'
 import DatapointList from "./DatapointList";
 
 export default {
@@ -195,111 +196,6 @@ export default {
     data : function() {
         return {
             toggle_none: null,
-
-            items: [
-            {
-                action: 'local_bar',
-                title: 'Beverages',
-                items: [
-                { title: 'Red Bull' },
-                { title: 'Coffee' },
-                { title: 'Soda' }
-                ]
-                },
-                {
-                action: 'restaurant',
-                title: 'Meals',
-                items: [
-                { title: 'Fast Food' },
-                { title: 'Restaurant' },
-                { title: 'Homemade (Fresh)' },
-                { title: 'Homemade (Processed)' },
-                ]
-                },
-                {
-                action: 'local_hospital',
-                title: 'Pharmaceuticals',
-                items: [
-                { title: 'Isotrtinoin' },
-                { title: 'Ibuprofen' },
-                { title: 'Asprin (NSAID)' },
-                { title: 'Adderall' },
-                { title: 'Vyvanse' },
-                { title: 'MDMA' }
-                ]
-                },
-                {
-                action: 'fitness_center',
-                title: 'Fitness',
-                items: [
-                { title: 'Steps' }
-                ]
-                },
-                {
-                action: 'local_laundry_service',
-                title: 'Hygiene',
-                items: [
-                { title: 'Shower' },
-                { title: 'Brush Teeth' }
-                ]
-                },
-                {
-                action: 'airline_seat_individual_suite',
-                title: 'Sleep',
-                items: [
-                { title: 'List Item' }
-                ]
-                }
-                ],
-
-
-
-                effects: [
-                {
-                action: 'label_important',
-                title: 'Pain',
-                items: [
-                { title: 'List Item' }
-                ]
-                },
-                {
-                action: 'label_important',
-                title: 'Head',
-                items: [
-                { title: 'Headache' },
-                { title: 'Homemade (Processed)' },
-                { title: 'Homemade (Fresh)' }
-                ]
-                },
-                {
-                action: 'label_important',
-                title: 'Oral',
-                items: [
-                { title: 'List Item' }
-                ]
-                },
-                {
-                action: 'label_important',
-                title: 'Sleep',
-                items: [
-                { title: 'List Item' }
-                ]
-                },
-                {
-                action: 'label_important',
-                title: 'Body',
-                items: [
-                { title: 'List Item' }
-                ]
-                },
-                {
-                action: 'label_important',
-                title: 'Physiological',
-                items: [
-                { title: 'List Item' }
-                ]
-            }],
-
         };
     },
 
@@ -312,7 +208,24 @@ export default {
     },
 
     created() {
+		this.$store.dispatch('Datapoints/getActions');
+		this.$store.dispatch('Datapoints/getEffects');
+	},
 
-    }
+	computed: {
+		...mapState({
+			actions: state => state.Datapoints.actions,
+			effects: state => state.Datapoints.effects
+		})
+	},
+	
+	methods: {
+		...mapActions({
+		
+		}),
+		...mapGetters({
+		
+		})
+	}
 }
 </script>
