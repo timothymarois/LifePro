@@ -9,13 +9,30 @@
 
         <!-- <v-spacer></v-spacer> -->
         
-        <v-text-field
+        <!-- <v-text-field
             flat
             solo-inverted
+            clearable
             hide-details
             prepend-inner-icon="search"
             label="Search"
-        ></v-text-field>
+        ></v-text-field> -->
+
+        <v-autocomplete
+             color="info"
+            v-model="select"
+            :loading="loading"
+            :items="items"
+            :search-input.sync="search"
+            prepend-inner-icon="search"
+            clearable
+            class="mx-3"
+            flat
+            hide-no-data
+            hide-details
+            label="Search"
+            solo-inverted
+            ></v-autocomplete>
 
         <Settings />
 
@@ -30,7 +47,41 @@ import Settings from "../features/Settings";
 
 export default {
     data: () => ({
-        
+        loading: false,
+        items: [],
+        search: null,
+        select: null,
+        states: [
+            'Abdominal pain',
+            'Asthma Attacks',
+            'Back Pain',
+            'Chest Pain',
+            'Constipation',
+            'Diarrhea',
+            'Dizziness',
+            'Fever',
+            'Headache',
+            'Heart Palpitation',
+            'Hip Pain',
+            'Inset Bites',
+            'Joint Pain',
+            'Knee Pain',
+            'Leg Pain',
+            'Nausea or Vomiting',
+            'Neck Pain',
+            'Night Sweats',
+            'Numbness or Tingling',
+            'Pelvic Pain',
+            'Seizure',
+            'Shortness of breath',
+            'Shoulder Pain',
+            'Skin Rashes',
+            'Sore Arms/Hands ',
+            'Sore Muscles ',
+            'Sunburn',
+            'Swelling',
+            'Wheezing'
+        ]
     }),
     components: {
         Settings
@@ -40,6 +91,23 @@ export default {
     },
     props: {
         
+    },
+    methods: {
+      querySelections (v) {
+        this.loading = true
+        // Simulated ajax query
+        setTimeout(() => {
+          this.items = this.states.filter(e => {
+            return (e || '').toLowerCase().indexOf((v || '').toLowerCase()) > -1
+          })
+          this.loading = false
+        }, 500)
+      }
+    },
+    watch: {
+      search (val) {
+        val && val !== this.select && this.querySelections(val)
+      }
     }
 }
   

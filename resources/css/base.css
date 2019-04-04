@@ -357,3 +357,9 @@
         min-height: 42px;
     }
 }
+
+
+.v-autocomplete__content .theme--dark.v-list {
+    background: #19232b;
+    border: 1px solid #3a648e;
+}
