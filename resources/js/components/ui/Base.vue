@@ -112,13 +112,11 @@
 
   import Toolbar from "./Toolbar";
   import Footer from "./Footer";
-  import Settings from "../features/Settings";
 
   export default {
     components: {
         Footer,
-        Toolbar,
-        Settings
+        Toolbar
     },
     data: () => ({
       drawer : null,

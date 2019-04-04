@@ -57,7 +57,7 @@
     background: transparent
 }
 
-.v-text-field__slot input{
+.v-list__tile .v-text-field__slot input{
     text-align: center;
     font-size: 14px;
     font-size: 16px;
@@ -347,3 +347,13 @@
     background: rgb(179, 109, 46);
 } */
 
+
+.v-toolbar__content, .v-toolbar__extension {
+    padding: 0 5px 0 15px;
+}
+
+@media only screen and (max-width: 960px) {
+    .v-text-field.v-text-field--solo .v-input__control {
+        min-height: 42px;
+    }
+}

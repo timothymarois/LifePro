@@ -73,31 +73,25 @@ const actions = [
 		action: 'local_hospital',
 		title: 'Pharmaceuticals',
 		items: [
-			{
-				id:3239,
-				order:1,
-				title: 'Isotrtinoin',
-				desc: 'This is a description for this datapoint',
-				val: 0
-			},
+			
 			{
 				id:3228,
 				order:2,
-				title: 'Ibuprofen',
+				title: 'Ibuprofen (mg)',
 				desc: 'This is a description for this datapoint',
 				val: 0
 			},
 			{
 				id:3237,
 				order:3,
-				title: 'Adderall',
+				title: 'Adderall (mg)',
 				desc: 'This is a description for this datapoint',
 				val: 0
 			},
 			{
 				id:3235,
 				order:4,
-				title: 'Vyvanse',
+				title: 'Vyvanse (mg)',
 				desc: 'This is a description for this datapoint',
 				val: 0
 			},
@@ -168,7 +162,7 @@ const effects = [
 	{
 		order:1,
 		action: 'label_important',
-		title: 'Pain',
+		title: 'Symptoms',
 		items: [
 			{
 				id:6239,
@@ -190,7 +184,7 @@ const effects = [
 				title: 'Headache',
 				desc: 'This is a description for this datapoint',
 				val: 0
-			}
+			} 
 		]
 	},
 	{
@@ -238,12 +232,61 @@ const effects = [
 	{
 		order:6,
 		action: 'label_important', 
-		title: 'Physiological',
+		title: 'State of Mind',
 		items: [
 			{
 				id:6239,
 				order:1,
-				title: 'List Item',
+				title: 'Emotional',
+				desc: 'This is a description for this datapoint',
+				val: 0
+			},
+			{
+				id:6239,
+				order:1,
+				title: 'Motivated',
+				desc: 'This is a description for this datapoint',
+				val: 0
+			},
+			{
+				id:6239,
+				order:1,
+				title: 'Depressed',
+				desc: 'This is a description for this datapoint',
+				val: 0
+			},
+			{
+				id:6239,
+				order:1,
+				title: 'Angry',
+				desc: 'This is a description for this datapoint',
+				val: 0
+			},
+			{
+				id:6239,
+				order:1,
+				title: 'Sadness',
+				desc: 'This is a description for this datapoint',
+				val: 0
+			},
+			{
+				id:6239,
+				order:1,
+				title: 'Shame',
+				desc: 'This is a description for this datapoint',
+				val: 0
+			},
+			{
+				id:6239,
+				order:1,
+				title: 'Fear',
+				desc: 'This is a description for this datapoint',
+				val: 0
+			},
+			{
+				id:6239,
+				order:1,
+				title: 'Happy',
 				desc: 'This is a description for this datapoint',
 				val: 0
 			}

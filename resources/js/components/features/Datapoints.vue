@@ -47,7 +47,7 @@
        </v-flex> -->
 
 
-        <v-flex xs12 md4>
+        <v-flex xs12 sm6 md6 lg5 xl4>
          <v-card dark color="primary">
 
           <v-list class="actions">
@@ -117,7 +117,7 @@
        </v-flex>
 
 
-       <v-flex xs12 md4>
+       <v-flex xs12 sm6 md6 lg5 xl4>
          <v-card dark color="primary">
 
           <v-list class="effects" >

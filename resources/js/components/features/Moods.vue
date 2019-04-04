@@ -1,7 +1,7 @@
 <template>
 	<v-layout align-center-start justify-center row wrap>
 
-		<v-flex xs12 md4>
+		<v-flex xs12 sm12 md6 lg5 xl4>
 			<v-item-group class="pb-2" v-model="mood">
 
 				<div class="pb-1" style="font-size: 16px;color: #85abca;">How are you feeling today?</div>

@@ -1,8 +1,13 @@
 <template>
-  <v-layout row justify-center>
+
     <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
       <template v-slot:activator="{ on }">
-        <v-btn color="primary" dark v-on="on">Settings</v-btn>
+        <!-- <v-btn color="primary" dark v-on="on">Settings</v-btn> -->
+        
+        <v-btn icon dark v-on="on">
+            <v-icon>settings</v-icon>
+        </v-btn>
+
       </template>
       <v-card>
         <v-toolbar dark color="primary">
@@ -11,9 +16,9 @@
           </v-btn>
           <v-toolbar-title>Settings</v-toolbar-title>
           <v-spacer></v-spacer>
-          <!-- <v-toolbar-items>
-            <v-btn dark flat @click="dialog = false">Save Changes</v-btn>
-          </v-toolbar-items> -->
+          <v-toolbar-items>
+            <v-btn dark flat @click="dialog = false">Done</v-btn>
+          </v-toolbar-items>
         </v-toolbar>
         
         <v-divider></v-divider>
@@ -54,7 +59,7 @@
 
       </v-card>
     </v-dialog>
-  </v-layout>
+
 </template>
 
 <script>
