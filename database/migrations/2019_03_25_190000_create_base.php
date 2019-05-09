@@ -13,49 +13,62 @@ class CreateBase extends Migration
      */
     public function up()
     {
-        Schema::create('base_category', function (Blueprint $table) {
+        Schema::create('app_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');
+            $table->integer('user_id');
 
             $table->string('name',32);
             $table->string('type',24);
-            $table->string('icon',32);
+            $table->string('icon',32)->default('');
+
             $table->integer('order')->default(0);
+            $table->integer('protected')->default(0);
 
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
 
-        Schema::create('base_datapoint', function (Blueprint $table) {
+        Schema::create('app_datapoints', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('category_id');
+            $table->integer('user_id');
+            $table->integer('category_id');
 
             $table->string('name',32);
             $table->string('description',155)->default('');
-            $table->string('format',24)->default('binary');
-            $table->string('eq',24)->default('average');
+            $table->string('type',32)->default('ACTION');
+
+            $table->string('dose_amount',32)->default('');
+            $table->string('dose_scale',32)->default('');
+            $table->string('value_format',24)->default('binary');
+
             $table->integer('order')->default(0);
+            $table->integer('protected')->default(0);
 
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('category_id')->references('id')->on('base_category')->onDelete('cascade');
         });
 
-        Schema::create('base_datavalue', function (Blueprint $table) {
+        Schema::create('app_datapoints_values', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('point_id');
+            $table->integer('user_id');
+            $table->integer('datapoint_id');
 
             $table->decimal('value')->default(0.00);
+            $table->string('time',32)->default('none');
 
-            $table->date('added_at');
+            $table->date('date');
             $table->timestamps();
+        });
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('point_id')->references('id')->on('base_datapoint')->onDelete('cascade');
+        Schema::create('app_events', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->integer('user_id');
+
+            $table->string('name',32);
+            $table->date('start_date');
+            $table->date('end_date');
+
+            $table->integer('protected')->default(0);
+
+            $table->timestamps();
         });
     }
 
@@ -66,8 +79,9 @@ class CreateBase extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('base_datavalue');
-        Schema::dropIfExists('base_datapoint');
-        Schema::dropIfExists('base_category');
+        Schema::dropIfExists('app_categories');
+        Schema::dropIfExists('app_datapoints');
+        Schema::dropIfExists('app_datapoints_values');
+        Schema::dropIfExists('app_events');
     }
 }
