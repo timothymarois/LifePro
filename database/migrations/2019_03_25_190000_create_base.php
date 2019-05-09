@@ -63,10 +63,21 @@ class CreateBase extends Migration
             $table->integer('user_id');
 
             $table->string('name',32);
+            $table->string('description',155)->default('');
             $table->date('start_date');
             $table->date('end_date');
 
             $table->integer('protected')->default(0);
+
+            $table->timestamps();
+        });
+
+        Schema::create('app_notes', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->integer('user_id');
+
+            $table->string('description',255)->default('');
+            $table->date('date');
 
             $table->timestamps();
         });
@@ -83,5 +94,6 @@ class CreateBase extends Migration
         Schema::dropIfExists('app_datapoints');
         Schema::dropIfExists('app_datapoints_values');
         Schema::dropIfExists('app_events');
+        Schema::dropIfExists('app_notes');
     }
 }
