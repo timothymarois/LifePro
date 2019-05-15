@@ -68,7 +68,6 @@
     <v-content>
       <v-container fluid pa-2>
         <router-view></router-view> 
-        <Settings />
       </v-container>
     </v-content>
     

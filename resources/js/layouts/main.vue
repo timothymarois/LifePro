@@ -5,7 +5,7 @@
 </template>
 
 <style lang="scss" scoped>
-    @import '//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons';
+    @import '//fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons';
 
     .md-primary {
         background-color: #2196f3!important;

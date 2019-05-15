@@ -1,6 +1,6 @@
 <template>
 
-      <v-layout align-center-start justify-center row wrap>
+      <v-layout align-center-start justify-center row wrap style="padding-top:5px;">
 
        <!-- <v-flex xs12>
          <v-card dark color="primary">
@@ -104,12 +104,6 @@
               
             </v-list-tile> -->
 
-
-
-
-
-
-
           </v-list-group>
         </v-list>
 
@@ -167,9 +161,6 @@
               </v-list-tile-action>
               
             </v-list-tile> -->
-
-
-
 
           </v-list-group>
         </v-list>

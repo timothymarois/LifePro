@@ -1,9 +1,10 @@
 <template>
 
-	<v-container grid-list-md text-xs-center pa-0>
+	<v-container grid-list-md text-xs-center pa-1>
 
-		<Moods />   
-		<Datapoints />
+		<Moods /> 
+		<DashboardStats />
+		<!-- <Datapoints /> -->
 
 	</v-container>
 
@@ -12,6 +13,7 @@
 <script>
 
 import Moods from "../components/features/Moods";
+import DashboardStats from "../components/features/DashboardStats";
 import Datapoints from "../components/features/Datapoints";
 
 export default {
@@ -19,6 +21,7 @@ export default {
 
 	components: {
 		Moods,
+		DashboardStats,
 		Datapoints
 	},
 
