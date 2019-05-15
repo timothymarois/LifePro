@@ -99,7 +99,9 @@
     </v-bottom-nav>
   </v-card> -->
 
-    <Footer />
+    <!-- <Footer /> -->
+
+    <!-- <BottomNav></BottomNav> -->
 
     
 
@@ -110,11 +112,13 @@
 <script>
 
   import Toolbar from "./Toolbar";
-  import Footer from "./Footer";
+  // import BottomNav from "./BottomNav";
+  // import Footer from "./Footer";
 
   export default {
     components: {
-        Footer,
+        // Footer,
+        // BottomNav,
         Toolbar
     },
     data: () => ({

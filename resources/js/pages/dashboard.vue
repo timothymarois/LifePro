@@ -2,7 +2,7 @@
 
 	<v-container grid-list-md text-xs-center pa-1>
 
-		<Moods /> 
+		<!-- <Moods />  -->
 		<DashboardStats />
 		<!-- <Datapoints /> -->
 
